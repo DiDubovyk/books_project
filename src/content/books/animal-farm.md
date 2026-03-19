@@ -4,6 +4,7 @@ author: "George Orwell"
 publishYear: 1945
 rating: 5
 cover: "/images/animal-farm.jpg"
+description: "A razor-sharp political allegory in which farm animals overthrow their human master — only to discover that the pigs who take power become just as tyrannical as the humans they replaced."
 buy:
   spain: "https://www.amazon.es/dp/..."
   usa: "https://www.amazon.com/dp/..."

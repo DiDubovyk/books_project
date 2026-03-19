@@ -10,6 +10,7 @@ const books = defineCollection({
     publishYear: z.number(),
     rating: z.number().min(1).max(5),
     cover: z.string(),
+    description: z.string(),
     buy: z.object({
       spain: z.url(),
       usa: z.url(),

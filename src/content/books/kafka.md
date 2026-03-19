@@ -4,6 +4,7 @@ author: "Haruki Murakami"
 publishYear: 2002
 rating: 5
 cover: "/images/murakami-kafka.jpg"
+description: "A dreamlike masterpiece of magical realism following a runaway teenager and an old man who talks to cats — two parallel journeys that defy logic yet converge in deeply moving ways."
 buy:
   spain: "https://www.amazon.es/dp/..."
   usa: "https://www.amazon.com/dp/..."

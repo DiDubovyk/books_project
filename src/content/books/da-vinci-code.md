@@ -4,6 +4,7 @@ author: "Dan Brown"
 publishYear: 2003
 rating: 4
 cover: "/images/the-da-vinci-code.jpg"
+description: "A breathless thriller in which Harvard symbologist Robert Langdon unravels a trail of clues hidden in Leonardo da Vinci's art — leading to a secret that the Catholic Church has buried for two thousand years."
 buy:
   spain: "https://www.amazon.es/dp/..."
   usa: "https://www.amazon.com/dp/..."

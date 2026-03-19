@@ -1,35 +1,51 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { getCollection } from 'astro:content';
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
 
 const books = await getCollection("books");
-
-
-
 ---
 
 <Layout title="My book shelf">
-	<main>
-		<h1 class="heading-primary">Book <span>recommendations</span> </h1>
-	</main>
-	<section aria-label="My book recommendations">
-		<div class="books-container">
-			<div class="books-container__list">
-				{
-					books.map(book => {
-						const {id, data} = book;
-						const {title, author, publishYear, rating, cover, buy} = data;
+  <main>
+    <h1 class="heading-primary">Book <span>recommendations</span></h1>
 
-						return (
-							<article class="book-card">
-								<img src={cover} alt={title} class="book-card__cover">
-								<h3 class="book-card__title">{title}</h3>
-							</article>
-						)
+    <section aria-label="My book recommendations">
+      <div class="books-container">
+        <div class="books-container__list">
+          {
+            books.map((book) => {
+              const { id, data } = book;
+              const {
+                title,
+                author,
+                publishYear,
+                rating,
+                cover,
+                description,
+                buy,
+              } = data;
 
-					})
-				}
-			</div>
-		</div>
-	</section>
+              return (
+                <article class="book-card">
+                  <a href={buy.spain} class="book-card__cover">
+                    <img src={cover} alt={title} />
+                  </a>
+
+                  <div class="book-card__title">
+                    <h2 class="heading-secundary">{title}</h2>
+                    <p class="book-card__description">{description}</p>
+                    <span class="book-card__stars">
+                      {Array.from({ length: rating }).map((_, i) => (
+                        <span>★</span>
+                      ))}
+                    </span>
+                  </div>
+                </article>
+              );
+            })
+          }
+        </div>
+      </div>
+    </section>
+  </main>
 </Layout>
