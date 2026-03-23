@@ -1,0 +1,11 @@
+.book-page {
+  display: flex;
+  gap: 3rem;
+
+  &__cover {
+    border-radius: 4px;
+    height: auto;
+    width: 24rem;
+    height: auto;
+  }
+}

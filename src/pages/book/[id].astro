@@ -1,0 +1,42 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection, render } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+
+export async function getStaticPaths() {
+  const books = await getCollection("books");
+
+  return books.map((book) => ({
+    params: { id: book.id },
+    props: { book },
+  }));
+}
+
+const { book } = Astro.props;
+const { data } = book;
+const { title, author, publishYear, rating, cover, description, buy } = data;
+
+const { Content } = await render(book);
+---
+
+<Layout title={`${title} - books recommendation`}>
+  <div class="book-page">
+    <aside>
+      <Image
+        src={cover}
+        width={384}
+        height={576}
+        transition:name={`cover-${book.id}`}
+        alt={`Cover of ${title}`}
+        class="book-page__cover"
+      />
+    </aside>
+    <main>
+      <h2 class="heading-secundary">{title}</h2>
+      <div>
+        <Content />
+      </div>
+    </main>
+  </div>
+</Layout>

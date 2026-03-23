@@ -7,7 +7,8 @@
 @use "base/typography";
 @use "base/utilities";
 
-@use "pages/home";
-
 @use "layout/books-container";
+
+@use "pages/home";
+@use "pages/book-page";
 @use "components/book-card";

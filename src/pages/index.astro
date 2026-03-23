@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
 
 const books = await getCollection("books");
 ---
@@ -27,12 +28,18 @@ const books = await getCollection("books");
 
               return (
                 <article class="book-card">
-                  <a href={buy.spain} class="book-card__cover">
-                    <img src={cover} alt={title} />
+                  <a href={`/book/${id}`} class="book-card__cover">
+                    <Image
+                      src={cover}
+                      alt={title}
+                      transition:name={`cover-${id}`}
+                      width={384}
+                      height={576}
+                    />
                   </a>
 
                   <div class="book-card__title">
-                    <h2 class="heading-secundary">{title}</h2>
+                    <h2 class="heading-tertiary">{title}</h2>
                     <p class="book-card__description">{description}</p>
                     <span class="book-card__stars">
                       {Array.from({ length: rating }).map((_, i) => (

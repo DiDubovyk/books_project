@@ -3,7 +3,7 @@
   flex-direction: column;
   &__cover {
     margin-bottom: 0.5rem;
-    transition: 0.3s;
+    transition: transform 0.3s;
 
     @media (min-width: 1280px) {
       margin-bottom: 0;
@@ -11,7 +11,7 @@
     img {
       margin-right: 1.25rem;
       width: 12rem;
-      height: 16rem;
+      height: 17rem;
       border-radius: 0.25rem;
     }
 
