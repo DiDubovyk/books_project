@@ -6,8 +6,8 @@ rating: 5
 cover: "/images/animal-farm.jpg"
 description: "A razor-sharp political allegory in which farm animals overthrow their human master — only to discover that the pigs who take power become just as tyrannical as the humans they replaced."
 buy:
-  spain: "https://www.amazon.es/dp/..."
-  usa: "https://www.amazon.com/dp/..."
+  spain: "https://www.amazon.es"
+  usa: "https://www.amazon.com"
 ---
 
 _Animal Farm_ is a short allegorical novella by George Orwell, published in 1945. Set on a fictional English farm, the story follows a group of animals who overthrow their human farmer in the hope of building a fairer, equal society — only to find that power corrupts those who seize it.

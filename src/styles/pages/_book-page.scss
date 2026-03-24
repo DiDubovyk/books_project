@@ -8,4 +8,30 @@
     width: 24rem;
     height: auto;
   }
+
+  &__buy {
+    margin-top: 1rem;
+    text-wrap: balance;
+    text-decoration: none;
+    display: inline-flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    background-color: #facc15;
+    color: black;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #eab308;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: #eab308;
+      transform: scale(1.05);
+    }
+
+    &:active {
+      background-color: #ca8a04;
+    }
+  }
 }

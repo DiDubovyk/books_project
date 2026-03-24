@@ -6,8 +6,8 @@ rating: 5
 cover: "/images/murakami-kafka.jpg"
 description: "A dreamlike masterpiece of magical realism following a runaway teenager and an old man who talks to cats — two parallel journeys that defy logic yet converge in deeply moving ways."
 buy:
-  spain: "https://www.amazon.es/dp/..."
-  usa: "https://www.amazon.com/dp/..."
+  spain: "https://www.amazon.es"
+  usa: "https://www.amazon.com"
 ---
 
 _Kafka on the Shore_ is a mesmerizing novel by Japanese author Haruki Murakami, originally published in Japanese in 2002 and translated into English in 2005. Blending myth, mystery, and magical realism, it tells two parallel stories that slowly, inevitably converge in ways that defy ordinary logic.

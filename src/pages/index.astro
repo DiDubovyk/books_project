@@ -4,6 +4,8 @@ import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 
 const books = await getCollection("books");
+
+export const prerender = true;
 ---
 
 <Layout title="My book shelf">

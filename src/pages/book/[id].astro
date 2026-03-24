@@ -1,8 +1,10 @@
 ---
-import type { GetStaticPaths } from "astro";
 import { getCollection, render } from "astro:content";
+import { SHOW_BUY_BUTTON } from "astro:env/server";
 import Layout from "../../layouts/Layout.astro";
 import { Image } from "astro:assets";
+import BookScore from "../../components/BookScore.astro";
+import BuyButton from "../../components/BuyButton.astro";
 
 export async function getStaticPaths() {
   const books = await getCollection("books");
@@ -18,6 +20,8 @@ const { data } = book;
 const { title, author, publishYear, rating, cover, description, buy } = data;
 
 const { Content } = await render(book);
+
+export const prerender = true;
 ---
 
 <Layout title={`${title} - books recommendation`}>
@@ -31,6 +35,10 @@ const { Content } = await render(book);
         alt={`Cover of ${title}`}
         class="book-page__cover"
       />
+      <BookScore server:defer id={book.id}>
+        <span slot="fallback">Loading rating...</span>
+      </BookScore>
+      {SHOW_BUY_BUTTON && <BuyButton server:defer buy={buy} />}
     </aside>
     <main>
       <h2 class="heading-secundary">{title}</h2>

@@ -6,8 +6,8 @@ rating: 4
 cover: "/images/the-da-vinci-code.jpg"
 description: "A breathless thriller in which Harvard symbologist Robert Langdon unravels a trail of clues hidden in Leonardo da Vinci's art — leading to a secret that the Catholic Church has buried for two thousand years."
 buy:
-  spain: "https://www.amazon.es/dp/..."
-  usa: "https://www.amazon.com/dp/..."
+  spain: "https://www.amazon.es"
+  usa: "https://www.amazon.com"
 ---
 
 _The Da Vinci Code_ is a thriller novel by American author Dan Brown, published in 2003. One of the best-selling novels of all time, it follows Harvard symbologist Robert Langdon as he is pulled into a deadly mystery hidden within the works of Leonardo da Vinci — a secret that the Catholic Church has suppressed for two thousand years.
