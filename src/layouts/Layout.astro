@@ -1,6 +1,8 @@
 ---
 import "../styles/global.scss";
 import { ClientRouter } from "astro:transitions";
+import { Font } from "astro:assets";
+
 const { title = "Astro Basics" } = Astro.props;
 ---
 
@@ -11,6 +13,8 @@ const { title = "Astro Basics" } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
+    <Font cssVariable="--font-cormorant" />
+    <Font cssVariable="--font-jost" />
     <ClientRouter />
   </head>
   <body>

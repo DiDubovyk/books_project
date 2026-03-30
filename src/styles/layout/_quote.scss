@@ -1,0 +1,45 @@
+.quote {
+  position: relative;
+  margin-block: 10rem;
+  margin-inline: 5rem;
+  padding-inline: 10rem;
+  blockquote {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    cite {
+      align-self: center;
+      font-style: normal;
+      color: #bc6c25;
+      font-size: 2rem;
+      font-weight: 400;
+      transform: translateX(8rem);
+      text-transform: uppercase;
+    }
+
+    p {
+      font-style: italic;
+      color: #606c38;
+      font-family: var(--font-cormorant);
+      font-size: 5rem;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.quote::before {
+  content: "\201D";
+  position: absolute;
+  top: -3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 15rem;
+  color: transparent;
+  -webkit-text-stroke: 10px rgba(96, 108, 56, 0.274);
+  //   color: rgba(96, 108, 56, 0.2);
+  font-family: var(--font-cormorant);
+  line-height: 1;
+  font-weight: bold;
+  font-style: oblique;
+}

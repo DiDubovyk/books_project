@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig, envField } from "astro/config";
+import { defineConfig, envField, fontProviders } from "astro/config";
 
 import node from "@astrojs/node";
 
@@ -23,4 +23,20 @@ export default defineConfig({
   },
 
   adapter: vercel(),
+  fonts: [
+    {
+      provider: fontProviders.google(),
+      name: "Cormorant Garamond",
+      cssVariable: "--font-cormorant",
+      weights: ["200", "300", "400", "600"],
+      styles: ["normal", "italic"],
+    },
+    {
+      provider: fontProviders.google(),
+      name: "Jost",
+      cssVariable: "--font-jost",
+      weights: ["300", "400", "500"],
+      styles: ["normal"],
+    },
+  ],
 });

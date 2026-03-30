@@ -7,7 +7,9 @@
 @use "base/typography";
 @use "base/utilities";
 
+@use "layout/header";
 @use "layout/books-container";
+@use "layout/quote";
 
 @use "pages/home";
 @use "pages/book-page";

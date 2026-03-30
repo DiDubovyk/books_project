@@ -9,9 +9,22 @@ export const prerender = true;
 ---
 
 <Layout title="My book shelf">
+  <header class="header">
+    <div class="header-title">
+      <!-- <span class="header-title__ornament">✦</span> -->
+      <h1 class="heading-primary">
+        the shelf <span>a few books worth your time</span>
+      </h1>
+      <span class="header-title__ornament">✦ ✦ ✦</span>
+    </div>
+  </header>
   <main>
-    <h1 class="heading-primary">Book <span>recommendations</span></h1>
-
+    <section class="quote">
+      <blockquote>
+        <p>"Books are a uniquely portable magic."</p>
+        <cite>Stephen King</cite>
+      </blockquote>
+    </section>
     <section aria-label="My book recommendations">
       <div class="books-container">
         <div class="books-container__list">
@@ -35,14 +48,18 @@ export const prerender = true;
                       src={cover}
                       alt={title}
                       transition:name={`cover-${id}`}
-                      width={384}
-                      height={576}
+                      width={200}
+                      height={300}
                     />
                   </a>
 
-                  <div class="book-card__title">
-                    <h2 class="heading-tertiary">{title}</h2>
-                    <p class="book-card__description">{description}</p>
+                  <div class="book-card__content">
+                    <div class="book-card__content_title">
+                      <h3 class="heading-tertiary">{title} </h3>
+                      <h4 class="heading-four">{author}</h4>
+                    </div>
+
+                    {/* <p class="book-card__description">{description}</p> */}
                     <span class="book-card__stars">
                       {Array.from({ length: rating }).map((_, i) => (
                         <span>★</span>
