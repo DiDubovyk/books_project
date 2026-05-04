@@ -2,66 +2,73 @@
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
+import NavBar from "../components/NavBar.astro";
 
 const books = await getCollection("books");
+const goodreads = await getCollection("goodreads");
 
 export const prerender = true;
+
+const readBooks = goodreads
+  .filter((b) => b.data.My_Rating > 0)
+  .filter((b) => b.data.ISBN13.replace(/[^0-9]/g, "").length > 0);
+
+function getCover(isbn13: string) {
+  const clean = isbn13.replace(/[^0-9]/g, "");
+  if (!clean) return "/images/bookshelf.jpg";
+  return `https://covers.openlibrary.org/b/isbn/${clean}-M.jpg`;
+}
 ---
 
 <Layout title="My book shelf">
-  <header class="header">
-    <div class="header-title">
-      <!-- <span class="header-title__ornament">✦</span> -->
-      <h1 class="heading-primary">
-        the shelf <span>a few books worth your time</span>
-      </h1>
-      <span class="header-title__ornament">✦ ✦ ✦</span>
+  <header>
+    <NavBar />
+    <div class="header">
+      <div class="header__title">
+        <!-- <span class="header-title__ornament">✦</span> -->
+        <blockquote>
+          <h1 class="heading-primary">
+            "Books are a uniquely portable <span>magic</span>."
+          </h1>
+          <cite>Stephen King</cite>
+        </blockquote>
+        <div class="header__btn">
+          <button class="header__btn--primary"
+            >Explore smth new <span>&rarr;</span></button
+          >
+        </div>
+      </div>
     </div>
   </header>
   <main>
-    <section class="quote">
-      <blockquote>
-        <p>"Books are a uniquely portable magic."</p>
-        <cite>Stephen King</cite>
-      </blockquote>
-    </section>
     <section aria-label="My book recommendations">
       <div class="books-container">
+        <h2 class="heading-secundary">Recommendations Selection</h2>
         <div class="books-container__list">
           {
-            books.map((book) => {
-              const { id, data } = book;
-              const {
-                title,
-                author,
-                publishYear,
-                rating,
-                cover,
-                description,
-                buy,
-              } = data;
+            readBooks.map((book) => {
+              const { Title, Author, My_Rating, ISBN13 } = book.data;
+              const cover = getCover(ISBN13);
 
               return (
                 <article class="book-card">
-                  <a href={`/book/${id}`} class="book-card__cover">
-                    <Image
+                  <a class="book-card__cover" href={`/book/${book.id}`}>
+                    <img
                       src={cover}
-                      alt={title}
-                      transition:name={`cover-${id}`}
-                      width={200}
-                      height={300}
+                      alt={Title}
+                      onerror="this.onerror=null; this.src='/images/bookshelf.jpg'"
+                      onload="if(this.naturalWidth <= 1) this.src='/images/bookshelf.jpg'"
                     />
                   </a>
 
                   <div class="book-card__content">
-                    <div class="book-card__content_title">
-                      <h3 class="heading-tertiary">{title} </h3>
-                      <h4 class="heading-four">{author}</h4>
+                    <div class="book-card__content-title">
+                      <h3 class="heading-tertiary">{Title} </h3>
+                      <h4 class="heading-four">{Author}</h4>
                     </div>
 
-                    {/* <p class="book-card__description">{description}</p> */}
                     <span class="book-card__stars">
-                      {Array.from({ length: rating }).map((_, i) => (
+                      {Array.from({ length: My_Rating }).map((_, i) => (
                         <span>★</span>
                       ))}
                     </span>
@@ -71,6 +78,27 @@ export const prerender = true;
             })
           }
         </div>
+      </div>
+    </section>
+    <section aria-label="selected" class="selected">
+      <div class="selected__content">
+        <h2 class="heading-secundary">Featured Book of the Week</h2>
+        <h3 class="selected__content--title">Name of book</h3>
+        <p class="selected__content--description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis
+          delectus necessitatibus illo eius excepturi, nobis sequi recusandae
+          architecto iusto facilis eveniet vel magni natus voluptas consequuntur
+          voluptates nihil iste fugiat!
+        </p>
+        <div class="selected__indicators"></div>
+        <button class="selected__btn">Discover More</button>
+      </div>
+      <div class="selected__image">
+        <img
+          class="selected__image--cover"
+          src="/images/unnamed.png"
+          alt="book cover"
+        />
       </div>
     </section>
   </main>

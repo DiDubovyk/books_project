@@ -10,7 +10,10 @@
 @use "layout/header";
 @use "layout/books-container";
 @use "layout/quote";
+@use "layout/selected";
 
 @use "pages/home";
 @use "pages/book-page";
+
 @use "components/book-card";
+@use "components/navbar";

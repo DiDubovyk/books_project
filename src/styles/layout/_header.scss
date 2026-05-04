@@ -2,11 +2,12 @@
   position: relative;
   overflow: hidden;
   height: 70vh;
-  background-image: url(/images/unnamed.png);
+  background-image: url(/images/image.png);
   background-position: center;
   background-size: cover;
   padding-bottom: 5rem;
-  margin: 2rem;
+  margin: 1rem;
+  padding-inline: 2rem;
 
   &::after {
     content: "";
@@ -15,14 +16,14 @@
     left: 0;
     width: 100%;
     height: 100%;
-    // background: rgba(30, 20, 10, 0.171);
-    background: linear-gradient(
-      to bottom,
-      rgba(30, 20, 10, 0.171) 0%,
-      rgba(30, 20, 10, 0.171) 70%,
-      #fefae0 100%
-    );
-    backdrop-filter: blur(1px);
+    background: rgba(17, 11, 4, 0.459);
+    // background: linear-gradient(
+    //   to bottom,
+    //   rgba(30, 20, 10, 0.171) 0%,
+    //   rgba(30, 20, 10, 0.171) 70%,
+    //   #fefae0 100%
+    // );
+    // backdrop-filter: blur(1px);
     // background-color: rgba(219, 206, 163, 0.4);
     z-index: 1;
   }
@@ -32,19 +33,60 @@
     z-index: 2;
   }
 
-  &-title {
+  &__title {
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     gap: 0;
-    &__ornament {
-      line-height: 1;
-      display: block;
-      font-size: 3rem;
-      color: #fefae0;
-      letter-spacing: 4px;
+
+    blockquote {
+      color: white;
+      margin: 0;
+      align-self: flex-start;
+
+      cite {
+        font-size: 1.5rem;
+        font-family: var(--font-manrope);
+        font-style: normal;
+      }
+    }
+  }
+
+  &__btn {
+    align-self: flex-start;
+    margin-block: 3rem;
+
+    &--primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: white;
+      background-color: #1b3022;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      font-family: var(--font-newsread);
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      transition: all 0.4s;
+
+      span {
+        display: inline-block;
+        transition: transform 0.4s ease;
+      }
+
+      &:hover {
+        background-color: #08200f;
+        letter-spacing: 0.2em;
+        transform: scale(1.05);
+        span {
+          transform: translateX(4px);
+        }
+      }
     }
   }
 }

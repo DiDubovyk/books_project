@@ -1,0 +1,26 @@
+.selected {
+  padding: 2rem;
+  padding-right: 0;
+  display: flex;
+  background-color: #d4cdc1;
+
+  &__content {
+    &--title {
+    }
+
+    &--description {
+    }
+  }
+
+  &__indicators {
+  }
+
+  &__btn {
+    display: block;
+  }
+
+  &__image {
+    &--cover {
+    }
+  }
+}

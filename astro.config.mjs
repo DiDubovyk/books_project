@@ -33,10 +33,20 @@ export default defineConfig({
     },
     {
       provider: fontProviders.google(),
-      name: "Jost",
-      cssVariable: "--font-jost",
-      weights: ["300", "400", "500"],
+      name: "Manrope",
+      cssVariable: "--font-manrope",
+      weights: ["200", "300", "400", "500", "600", "800"],
       styles: ["normal"],
     },
+    {
+      provider: fontProviders.google(),
+      name: "Newsreader",
+      cssVariable: "--font-newsreader",
+      weights: ["200", "300", "400", "500", "600", "700", "800"],
+      styles: ["normal", "italic"],
+    },
   ],
+  image: {
+    domains: ["covers.openlibrary.org"],
+  },
 });
